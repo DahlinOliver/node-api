@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=Lr9WUkeYSA8&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=6
+
 const express = require('express');
 const _ = require("lodash");
 
@@ -10,10 +12,11 @@ app.listen(1717);
 
 // ----------------- LABORATION 1 ---------------------
 
-// Custom Random
+// Ger ett random tal mellan 0 och de ID man ger i URL:en
+// https://lodash.com/docs/4.17.15#random
+// https://stackoverflow.com/questions/42033209/how-to-get-id-from-url-as-variable-in-node-js
 app.get("/api/custom_random/:id", (req, res) => {
-  //res.send() returnerar JSON automatiskt om ett objekt skickas med
-  //params.id returnerar vad användaren har skrivit in som endpoint
+  
   let id = req.params.id;
   res.send({ num: _.random(0, id) });
 });
