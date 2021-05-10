@@ -29,7 +29,6 @@ app.get("/api/random", (req, res) => {
 
 
 
-
 // ----------------- LABORATION 2 ---------------------
 
 // Räknare, lägger till 1 för varje request
