@@ -31,19 +31,22 @@ app.get("/api/random", (req, res) => {
 
 // https://www.w3resource.com/javascript-exercises/javascript-function-exercise-7.php
 app.get('/api/vowels/:word', (req, res) => {
-	let id = req.params.word;
+	//let id = req.params.word;
+	let { word } = req.params
 	function vowel_count(string) {
-		var vowel_list = 'aeiouAEIOU'
+		//var vowel_list = 'aeiouåäöAEIOUÅÄÖ'
 		var vcount = 0
 
 		for (var i = 0; i < string.length; i++) {
-			if (vowel_list.indexOf(string[i]) !== -1) {
+			if ('aeiouåäöAEIOUÅÄÖ'.includes(string[i])) {
+			//if (vowel_list.indexOf(string[i]) !== -1) {
+				
 				vcount += 1
 			}
 		}
 		return vcount
 	}
-	res.send({ vowels: vowel_count(id) })
+	res.send({ vowels: vowel_count(word) })
 });
 
 
