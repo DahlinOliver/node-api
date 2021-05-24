@@ -38,7 +38,8 @@ app.get('/api/vowels/:word', (req, res) => {
 		var vcount = 0
 
 		for (var i = 0; i < string.length; i++) {
-			if ('aeiouåäöAEIOUÅÄÖ'.includes(string[i])) {
+			if ('aouåeiyäöAOUÅEIYÄÖ'.includes(string[i])) {
+			   
 			//if (vowel_list.indexOf(string[i]) !== -1) {
 				
 				vcount += 1
@@ -64,3 +65,5 @@ app.get("/api/count/add", (req, res) => {
 app.get("/api/count/show", (req, res) => {
   res.send({ count });
 });
+
+module.exports = app;
