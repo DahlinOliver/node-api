@@ -25,7 +25,7 @@ describe('/api/custom_random/:num', () => {
    });
 
    const num = 17;
-   
+
    it('should return value', (done) => {
       chai.request(server)
          .get('/api/custom_random/' + num)
@@ -35,6 +35,10 @@ describe('/api/custom_random/:num', () => {
          });
    });
 });
+
+
+
+
 
 describe('/api/random', () => {
     it('should return status 200', (done) => {
@@ -54,7 +58,18 @@ describe('/api/random', () => {
             done();
          });
    });
+
+
+    it('should return value', (done) => {
+      chai.request(server)
+         .get('/api/random')
+         .end((err, res) => {
+            res.body.should.have.property('num').and.be.a('number');
+            done();
+         });
+   });
 });
+
 
 describe('/api/vowels/:word', () => {
     it('should return status 200', (done) => {
@@ -78,7 +93,7 @@ describe('/api/vowels/:word', () => {
 
    const word = 'Webbkrypteringssystemet';
 
-   it('should return vowels', (done) => {
+   it('should return vowels value', (done) => {
       chai.request(server)
          .get('/api/vowels/' + word)
          .end((err, res) => {
@@ -87,6 +102,10 @@ describe('/api/vowels/:word', () => {
          });
    });
 });
+
+
+
+
 
 describe('/api/count/add', () => {
     it('should return status 200', (done) => {
@@ -108,6 +127,10 @@ describe('/api/count/add', () => {
          });
    });
 });
+
+
+
+
 
 describe('/api/count/show', () => {
     it('should return status 200', (done) => {
