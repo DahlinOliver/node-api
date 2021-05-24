@@ -1,8 +1,8 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = chai.should();
-const server = require('../app');
-
+//const server = require('../app');
+const server = 'http://localhost:1717'
 chai.use(chaiHttp);
 
 describe('/api/custom_random/:num', () => {

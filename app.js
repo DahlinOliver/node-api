@@ -21,7 +21,7 @@ app.use(express.static('public'))
 app.get("/api/custom_random/:num", (req, res) => {
   // /api/custom_random/hej
   let id = req.params.num;
-  res.send({ num: _.random(0, id) });
+  res.status(400).send({ num: _.random(0, id) });
 });
 
 // Ger ett random tal mellan 0 - 1023
